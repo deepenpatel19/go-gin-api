@@ -34,7 +34,9 @@ func InitializeDB() {
 	sslmode := os.Getenv("db_sslmode")
 	host := os.Getenv("db_host")
 	port := os.Getenv("db_port")
-	sqlDBConnectionString := "user=" + user + " dbname=" + dbname + " password=" + password + " sslmode" + sslmode
+	fmt.Println("Environment variables", user, dbname, password, sslmode, host, port)
+	sqlDBConnectionString := "user=" + user + " dbname=" + dbname + " password=" + password + " sslmode=" + sslmode
+	fmt.Println("SQL Connection string", sqlDBConnectionString)
 	db, err := sql.Open("postgres", sqlDBConnectionString)
 
 	if err != nil {
@@ -48,7 +50,7 @@ func InitializeDB() {
 
 	
 	// postgres://user:pass@localhost:5432/database?sslmode=disable
-	sqlDBMigrationString := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname "?sslmode" + sslmode 
+	sqlDBMigrationString := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode" + sslmode 
 	db1, err := sql.Open("postgres", sqlDBMigrationString)
 
 	if err != nil {

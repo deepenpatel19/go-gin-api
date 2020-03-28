@@ -89,7 +89,7 @@ func main() {
 			c.ShouldBind(&tokenVals)
 			
 			var idToken = tokenVals.IdToken
-			var socialsource = tokenVals.SocialSource
+			// var socialsource = tokenVals.SocialSource
 			email, verificationStatus := checkGoogleID(idToken)		
 			googleVerified := api.GoogleVerified{}
 			

@@ -1,4 +1,4 @@
-module deepenpatel19/go-gin-api
+module github.com/deepenpatel19/go-gin-api
 
 go 1.13
 
